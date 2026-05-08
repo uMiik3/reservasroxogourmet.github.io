@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Entre Sabores e Sentimentos</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* FUNDO */
+.bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url('fundo.jpg') center/cover no-repeat;
+    
+    transform: scale(1.05);
+    z-index: -2;
+}
+
+/* OVERLAY */
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(26,1,38,0.75), rgba(45,0,64,0.75));
+    z-index: -1;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* LOGO */
+.logo {
+    text-align: center;
+    margin-top: 30px;
+}
+.logo img {
+    width: 180px;
+}
+
+/* TITULOS */
+h1 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-size: 48px;
+    letter-spacing: 1px;
+    color: #f5d27a;
+}
+
+.subtitle {
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* CONTADOR */
+.countdown {
+    text-align: center;
+    font-size: 20px;
+    color: #f5d27a;
+    margin: 20px 0;
+}
+
+/* FORM */
+.form-box {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(245,210,122,0.2);
+    backdrop-filter: blur(12px);
+    padding: 25px;
+    border-radius: 15px;
+    margin: 30px 0;
+}
+
+input, button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+input {
+    background: rgba(255,255,255,0.9);
+    color: #000;
+}
+
+button {
+    background: linear-gradient(45deg, #caa64b, #f5d27a);
+    color: #1a0126;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* MENU */
+.menu-item {
+    margin-bottom: 20px;
+    padding: 25px;
+    border-left: 2px solid #f5d27a;
+    background: rgba(255,255,255,0.04);
+    border-radius: 10px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.menu-item b {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+}
+
+/* ANIMAÇÃO */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    opacity: 0.6;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+<div class="overlay"></div>
+
+<div class="container">
+
+    <!-- LOGO -->
+    <div class="logo reveal">
+        <img src="Logo Roxo (2).png">
+    </div>
+
+    <h1 class="reveal">Entre Sabores e Sentimentos</h1>
+    <p class="subtitle reveal">Uma noite para sentir, não apenas viver</p>
+
+    <!-- CONTADOR -->
+    <div class="countdown reveal">
+        ⏳ Faltam: <span id="contador"></span>
+    </div>
+
+    <!-- FORM -->
+    <div class="form-box reveal">
+        <h2>Reserve sua mesa</h2>
+        <input type="text" id="nome" placeholder="Nome completo">
+        <input type="number" id="pessoas" placeholder="Quantidade de pessoas">
+        <button onclick="enviarWhatsApp()">Confirmar reserva</button>
+    </div>
+
+    <!-- MENU -->
+    <div class="reveal menu-item">
+        🍸 <b>O Primeiro Olhar</b><br>
+        <small>Um início leve e aromático para despertar os sentidos</small>
+    </div>
+
+    <div class="reveal menu-item">
+        🥂 <b>O Encontro</b><br>
+        <small>Uma delicada criação da casa que marca o primeiro contato</small>
+    </div>
+
+    <div class="reveal menu-item">
+        🥗 <b>A Descoberta</b><br>
+        <small>Equilíbrio entre frescor, textura e contraste</small>
+    </div>
+
+    <div class="reveal menu-item">
+        🍝 <b>A Conexão</b><br>
+        <small>Conforto e harmonia em cada detalhe</small>
+    </div>
+
+    <div class="reveal menu-item">
+        🥩 <b>A Intensidade</b><br>
+        <small>O ápice da experiência em sabores marcantes</small>
+    </div>
+
+    <div class="reveal menu-item">
+        🍰 <b>A Doçura</b><br>
+        <small>Uma finalização elegante e memorável</small>
+    </div>
+
+    <div class="reveal menu-item">
+        ☕ <b>O Para Sempre</b><br>
+        <small>O encerramento perfeito para uma noite inesquecível</small>
+    </div>
+
+    <!-- FORM FINAL -->
+    <div class="form-box reveal">
+        <h2>Garanta sua experiência</h2>
+        <input type="text" id="nome2" placeholder="Nome completo" oninput="nome.value=this.value">
+        <input type="number" id="pessoas2" placeholder="Quantidade de pessoas" oninput="pessoas.value=this.value">
+        <button onclick="enviarWhatsApp()">Reservar agora</button>
+    </div>
+
+    <div class="footer reveal">
+        Roxo Gourmet • Experiência exclusiva de Dia dos Namorados
+    </div>
+
+</div>
+
+<script>
+
+/* WHATSAPP */
+function enviarWhatsApp() {
+    let nome = document.getElementById("nome").value;
+    let pessoas = document.getElementById("pessoas").value;
+
+    if(!nome || !pessoas){
+        alert("Preencha os campos!");
+        return;
+    }
+
+    /* ENVIA PARA GOOGLE SHEETS */
+    fetch("https://script.google.com/macros/s/AKfycbybWWxxWDKfzVw1-EnwfJVy_iOzAMhdyKZSL9Dhtdk6APHxV9YeXH8WdBJ2s6buSGJU/exec", {
+        method: "POST",
+        body: JSON.stringify({
+            nome: nome,
+            pessoas: pessoas
+        })
+    });
+}
+
+/* CONTADOR */
+function atualizarContador() {
+    const data = new Date("June 12, 2026 19:00:00").getTime();
+    const agora = new Date().getTime();
+    const diff = data - agora;
+
+    const dias = Math.floor(diff / (1000*60*60*24));
+    const horas = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+    const minutos = Math.floor((diff % (1000*60*60)) / (1000*60));
+
+    document.getElementById("contador").innerHTML =
+        `${dias}d ${horas}h ${minutos}m`;
+
+    if(diff < 0){
+        document.getElementById("contador").innerHTML = "Evento iniciado!";
+    }
+}
+
+setInterval(atualizarContador, 1000);
+
+/* ANIMAÇÃO SCROLL */
+function reveal() {
+    let elements = document.querySelectorAll(".reveal");
+
+    elements.forEach(el => {
+        let windowHeight = window.innerHeight;
+        let elementTop = el.getBoundingClientRect().top;
+
+        if(elementTop < windowHeight - 100){
+            el.classList.add("active");
+        }
+    });
+}
+
+window.addEventListener("scroll", reveal);
+reveal();
+
+</script>
+
+</body>
+</html>
